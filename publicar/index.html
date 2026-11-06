@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI FACIL Café</title>
+<meta name="description" content="AI FACIL Café: Café de especialidad en el corazón de Miraflores">
+<link rel="icon" href="img/logo.webp" type="image/webp">
+<style>
+/* Paleta, espaciado y navegación fija */
+:root{--crema:#FAF6F0;--cafe:#8B6F5A;--salvia:#A8B5A0;--texto:#3B2F2A;--cabecera:72px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;padding-top:var(--cabecera);background:var(--crema);color:var(--texto);font:1rem/1.6 system-ui,sans-serif}
+[id]{scroll-margin-top:calc(var(--cabecera) + 12px)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cafe);outline-offset:4px}
+.contenedor{width:min(1100px,calc(100% - 2rem));margin-inline:auto}
+header{position:fixed;inset:0 0 auto;z-index:2;background:var(--crema);box-shadow:0 2px 12px #3b2f2a15}
+.barra{height:var(--cabecera);display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.marca{display:flex;align-items:center;gap:.5rem;font-weight:750;text-decoration:none}
+.marca img{width:48px;height:48px}
+button,.cta{font:inherit;font-weight:700;border:0;border-radius:12px;background:var(--salvia);color:var(--texto);padding:.65rem 1rem;cursor:pointer}
+nav{display:none;position:absolute;inset:100% 0 auto;background:var(--crema);padding:.5rem 1rem 1rem}
+nav.abierto{display:grid}
+nav a{padding:.65rem;text-decoration:none;font-weight:650}
+nav a:hover{text-decoration:underline}
+/* Portada y tarjetas */
+.hero{position:relative;isolation:isolate;min-height:70vh;display:grid;align-items:center;color:white;background:var(--texto);padding:3rem 0}
+.hero img,.hero::after{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero img{object-fit:cover}
+.hero::after{content:"";background:linear-gradient(90deg,#1d1411ed,#1d14119e)}
+h1,h2,h3,p{margin:0}
+h1,h2{font-family:Georgia,serif;line-height:1.1}
+h1{font-size:clamp(2.35rem,6vw,4.5rem);max-width:17ch}
+h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:1.25rem}
+.hero p{max-width:45ch;margin:1.15rem 0 1.5rem;font-size:1.12rem}
+.cta{display:inline-block;text-decoration:none}
+.cta:focus-visible{outline-color:white}
+section:not(.hero),footer{padding:clamp(3rem,7vw,6rem) 0}
+#nosotros p{max-width:68ch}
+#productos{background:#f1e9de}
+.grilla{display:grid;gap:1.25rem}
+.tarjeta{min-width:0;overflow:hidden;border-radius:18px;background:#fffdfa;box-shadow:0 6px 20px #3b2f2a13}
+.tarjeta img{display:block;width:100%;height:auto;aspect-ratio:1 / 1;object-fit:cover}
+.detalle,blockquote{padding:1.3rem;margin:0}
+.detalle p{margin:.45rem 0 .8rem}
+figure{margin:0}
+blockquote{border-top:4px solid var(--salvia)}
+figcaption{padding:0 1.3rem 1.3rem;font-weight:700}
+footer{background:var(--texto);color:var(--crema)}
+address{font-style:normal}
+.derechos{margin-top:1.5rem}
+@media(min-width:600px){.grilla{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:800px){.grilla{grid-template-columns:repeat(3,minmax(0,1fr))}#menu{display:none}nav,nav.abierto{display:flex;position:static;padding:0;background:transparent}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="barra contenedor">
+<a class="marca" href="#inicio"><img src="img/logo.webp" alt="Logotipo de AI FACIL Café" width="128" height="128">AI FACIL Café</a>
+<button type="button" id="menu" aria-controls="navegacion" aria-expanded="false">Menú</button>
+<nav id="navegacion" aria-label="Menú principal"><a href="#inicio">Inicio</a><a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#testimonios">Testimonios</a><a href="#contacto">Contacto</a></nav>
+</div></header>
+<main>
+<section id="inicio" class="hero" aria-labelledby="titulo">
+<img src="img/portada.webp" alt="Imagen de portada de AI FACIL Café" width="1600" height="900" fetchpriority="high">
+<div class="contenedor"><h1 id="titulo">Café de especialidad en el corazón de Miraflores</h1><p>Granos peruanos de origen, tostados con cuidado y servidos sin apuro</p><a class="cta" href="#productos">Ver nuestra carta</a></div>
+</section>
+<section id="nosotros" class="contenedor"><h2>Nuestra historia</h2><p>Seleccionamos granos de especialidad de pequeños productores peruanos y los preparamos al momento. Creemos que una buena taza se disfruta sin prisa: por eso cuidamos el aroma, el sabor y un espacio tranquilo para conversar, trabajar o simplemente descansar.</p></section>
+<section id="productos"><div class="contenedor"><h2>Nuestra selección</h2><div class="grilla">
+<article class="tarjeta"><img src="img/producto-1.webp" alt="Taza de espresso doble" width="600" height="600" loading="lazy" decoding="async"><div class="detalle"><h3>Espresso Doble</h3><p>Intenso, dulce y de cuerpo suave, con grano peruano de altura</p><strong>S/ 9</strong></div></article>
+<article class="tarjeta"><img src="img/producto-2.webp" alt="Sándwich y café del Combo Power" width="600" height="600" loading="lazy" decoding="async"><div class="detalle"><h3>Combo Power</h3><p>Sandwich power y café , sano y equilibrado</p><strong>S/ 13</strong></div></article>
+<article class="tarjeta"><img src="img/producto-3.webp" alt="Bolsa de café peruano de altura" width="600" height="600" loading="lazy" decoding="async"><div class="detalle"><h3>Café de altura</h3><p>Bolsa 750 Gm de grano peruano, intenso y de notas cítricas</p><strong>S/ 15</strong></div></article>
+</div></div></section>
+<section id="testimonios" class="contenedor"><h2>Lo que dicen nuestros clientes</h2><div class="grilla">
+<figure class="tarjeta"><blockquote><p>El mejor espresso de Miraflores: aroma intenso y atención muy cálida.</p></blockquote><figcaption>Camila R.</figcaption></figure>
+<figure class="tarjeta"><blockquote><p>Mi lugar favorito para trabajar por las tardes: tranquilo y con un combo power espectacular</p></blockquote><figcaption>Diego M.</figcaption></figure>
+<figure class="tarjeta"><blockquote><p>Se nota el aroma de café peruano en cada taza. Volveré cada semana.</p></blockquote><figcaption>Lucía P.</figcaption></figure>
+</div></section>
+</main>
+<footer id="contacto"><div class="contenedor"><h2>Contacto</h2><address>Av. José Larco 400, Miraflores, Lima, Perú</address><p>Lunes a viernes: 7:30 a. m. a 8:00 p. m.</p><p>Sábados y domingos: 8:30 a. m. a 9:00 p. m.</p><p class="derechos">© <span id="anio">2026</span> AI FACIL Café</p></div></footer>
+<script>
+// El menú se cierra al elegir una sección o pulsar Escape.
+const menu=document.querySelector('#menu'), nav=document.querySelector('#navegacion');
+function abrir(visible){nav.classList.toggle('abierto',visible);menu.setAttribute('aria-expanded',String(visible))}
+menu.addEventListener('click',()=>abrir(menu.getAttribute('aria-expanded')==='false'));
+nav.addEventListener('click',e=>{const enlace=e.target.closest('a');if(enlace&&menu.offsetWidth){abrir(false);const destino=document.querySelector(enlace.hash);destino.setAttribute('tabindex','-1');destino.focus({preventScroll:true})}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){abrir(false);menu.focus()}});
+document.querySelector('#anio').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
